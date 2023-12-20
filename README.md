@@ -1,22 +1,22 @@
 # Diamonds price prediction
 
 ## Table of contents
-- [Problem description]()
-- [About the dataset]()
-- [Repository files]()
-- [How to install dependencies]()
-- [Host the server]()
-- [Making a prediction]()
-- [Docker containerization]()
-- [Cloud deployment]()
+- [Problem description](https://github.com/boiarchuk-m/Diamonds-price-prediction?tab=readme-ov-file#problem-description)
+- [About the dataset](https://github.com/boiarchuk-m/Diamonds-price-prediction?tab=readme-ov-file#about-the-dataset)
+- [Repository files](https://github.com/boiarchuk-m/Diamonds-price-prediction?tab=readme-ov-file#repository-files)
+- [How to install dependencies](https://github.com/boiarchuk-m/Diamonds-price-prediction?tab=readme-ov-file#how-to-install-dependencies)
+- [Host the server](https://github.com/boiarchuk-m/Diamonds-price-prediction?tab=readme-ov-file#host-the-server)
+- [Making a prediction](https://github.com/boiarchuk-m/Diamonds-price-prediction?tab=readme-ov-file#making-a-prediction)
+- [Docker containerization](https://github.com/boiarchuk-m/Diamonds-price-prediction?tab=readme-ov-file#docker-containerization)
+- [Cloud deployment](https://github.com/boiarchuk-m/Diamonds-price-prediction?tab=readme-ov-file#cloud-deployment)
 
 ## Problem description
-Diamonds are one of the precious stones bought to wear as jewellery or as investment as well.
+Diamonds are one of the precious stones bought to wear as jewelry or as an investment.
 
-This  project is aimed to create a model that predicts diamond prices based on features such as shape, carat, cut, color, clarity, lab and type.
+This  project aims to create a model that predicts diamond prices based on features such as shape, carat, cut, color, clarity, lab, and type.
 
 ## About the dataset
-This dataset was taken from kaggle : https://www.kaggle.com/datasets/miguelcorraljr/brilliant-diamonds. Dataset contains 119307 observations.  
+This dataset was taken from Kaggle: https://www.kaggle.com/datasets/miguelcorraljr/brilliant-diamonds. The dataset contains 119307 observations.  
 
 Attribute Information:
  1. id: Diamond identification number provided by Brilliant Earth
@@ -36,12 +36,12 @@ Attribute Information:
 - `train.py` a python script to train a model
 - `model=13.bin` binary file with trained model and features encoders
 - `diamonds_dataset.csv` dataset
-- `Pipfile` and `Pipfile.lock` files with dependencies for environment
+- `Pipfile` and `Pipfile.lock` files with dependencies for the environment
 - `predict.py` a python script to create a web service based on the model
-- `request.py` a python script to send a request to the service and check it's work
+- `request.py` a python script to send a request to the service and check its work
 - `Dockerfile` a script to generate docker container
 - `request_cloud.py` a python script to send a request to the cloud service
-- `request_streamlit.py` a python file with frontend part to make requests 
+- `request_streamlit.py` a python file with a frontend part to make requests 
 - `requirements.txt` requirements for `request_streamlit.py` file
 
 ## How to install dependencies
@@ -86,7 +86,7 @@ waitress-serve --listen=0.0.0.0:9696 predict:app
 
 ## Making a prediction
 
-To check the work of the web server you can use file `request.py` 
+To check the work of the web server you can use the file `request.py` 
 Just run it with this command
 
 ```bash
@@ -94,7 +94,7 @@ python request.py
 ```
 
 
-In the output you will get the price of the diamond
+In the output, you will get the price of the diamond
 
 ```bash
 {'Value': 445.126}
@@ -103,7 +103,7 @@ In the output you will get the price of the diamond
 
 ## Docker containerization
 
-You can run a web server using docker. First you need to create a docker image using the Dockerfile. Go to the project folder and run this command
+You can run a web server using docker. First, you need to create a docker image using the Dockerfile. Go to the project folder and run this command
 
 ```bash
 docker build -t diamonds .
@@ -116,16 +116,16 @@ docker run -it -p 9696:9696 diamonds
 
 ## Cloud deployment
 
-The web service was deployed to the google cloud and here are steps how I made it.
+The web service was deployed to the google cloud and here are steps on how I made it.
 
-First you need to install the gcloud CLI.There is an instructions form google how to make it: https://cloud.google.com/sdk/docs/install
+First, you need to install the gcloud CLI. There is an instruction form google on how to make it: https://cloud.google.com/sdk/docs/install
 
-Then you need to open the Google Cloud CLI shell and log in your account 
+Then you need to open the Google Cloud CLI shell and log in to your account 
 
 ```bash
 gcloud auth login
 ```
-After this you need to configure Docker 
+After this, you need to configure Docker 
 ```bash
 gcloud auth configure-docker
 ```
